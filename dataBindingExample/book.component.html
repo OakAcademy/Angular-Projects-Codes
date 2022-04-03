@@ -1,0 +1,251 @@
+<!-- <h1>Book List</h1> -->
+<!-- <div><h3 [textContent]="book.name"></h3></div>
+<div><h3>{{book.name}}</h3></div> -->
+
+<!-- <div [class]="getClassBinding(1)" >
+  <h2>First book is {{model.getBookId(1).name}}</h2>  
+</div>
+
+<div [class]="getClassBinding(2)" >
+    <h2>Second book is {{model.getBookId(2).name}}</h2>  
+  </div>
+
+  <button class="btn btn-success" [class.disabled]="disabled">Submit</button> -->
+
+  <!-- <div class= "m-3" [ngClass]="getClassObject(1)">
+    <h2> <span [style.color]="color">First book </span> is {{model.getBookId(1).name}}</h2> 
+  </div>
+  <div class= "m-3"[ngClass]="getClassObject(2)">
+    <h2> <span [ngStyle]="getStyleBinding(2)">Second book</span>  is {{model.getBookId(2).name}}</h2> 
+  </div> -->
+<!-- <div (click)="onClickDiv()">
+  <button name='first button'class="btn btn-success" (click)="onClick($event)">Submit</button>
+  <button name='second button'class="btn btn-success" (click)="onClick($event)">Submit</button>
+
+</div> -->
+ 
+<!-- <input [(ngModel)]="name"  (keyup.enter)="onKeyUp()" > -->
+<!-- 
+<h3>Lower-Title CasePipe</h3>
+{{name1}} <br>
+{{name1 | lowercase }}<br>
+{{name1 | titlecase}}
+
+<h3>Number Case</h3>
+{{price  }}<br>
+{{price | number }}<br>
+{{price | number:'1.2-2'}}
+
+<h3>Date Case</h3>
+{{today}}<br>
+{{today | date}}<br>
+{{today | date:'short'}}<br>
+{{today | date:'medium'}}<br>
+{{today | date:'MMM d, y, h:mm:ss a'}} -->
+
+<!-- {{description | custompipe}} -->
+
+<!-- FOR DİRECTİVE -->
+<!-- <div *ngIf="model.getBooks().length>0;then bookList else noBook ">
+</div>
+<ng-template #bookList>
+  There are {{model.getBooks().length}} books on the list
+ </ng-template>
+ <ng-template #noBook>
+  There is no book on the list
+ </ng-template> -->
+
+<!-- <div *ngIf="model.getBooks().length==0">
+  </div> -->
+
+<!-- <div [hidden]="model.getBooks().length==0">
+    There are {{model.getBooks().length}} books on the list</div>
+  
+<div [hidden]="model.getBooks().length!=0">
+    There is no book on the list</div> -->
+     <!-- //ngSwitch
+    <div [ngSwitch]="model.getBooks().length">
+      <span *ngSwitchCase="0">There is no book</span>
+      <span *ngSwitchCase="1">There is 1 book</span>
+      <span *ngSwitchDefault>There are many book</span>
+    </div>
+
+    <div [ngSwitch]="model.getBookId(2).name">
+      <span *ngSwitchCase="bookName">
+        Book name is War and Peace</span>
+      <span *ngSwitchCase="'My Childhood'">
+        Book name is My Childhood</span>
+      <span *ngSwitchDefault>
+        Book name is Sweaters</span>
+    </div> -->
+
+
+    <!-- ngFor -->
+
+  <!--   <ul>
+      <li *ngFor="let book of model.getBooks();index as i;first as f">
+         {{i+1}}- {{book.name}} -{{book.price}}
+         <span *ngIf="f">is first item</span>
+      </li>
+
+    </ul> -->
+     <!-- change detection -->
+    <!-- <div>
+      <button (click)="addBook()" class="btn-success">
+        Add Book </button>
+
+      <ul>
+        <li *ngFor="let book of model.getBooks()">
+           {{book.name}} 
+           <button class="btn btn-danger" (click)="deleteBook(book)" >
+             Delete</button>
+           <button class="btn btn-primary" (click)="updateBook(book)" >
+             Update</button>  
+        </li>
+  
+      </ul>
+    </div>
+ -->
+ <!-- ngTemplateOutlet
+ <ng-template [ngTemplateOutlet]="bookList"
+ [ngTemplateOutletContext]="{books:model.getBooks()}"></ng-template>
+ <ng-template [ngTemplateOutlet]="bookList"
+ [ngTemplateOutletContext]="{books:model.getBooks()}"></ng-template>
+
+ <ng-template #bookList let-books="books">
+      <div>
+        <ul>
+        <li *ngFor="let book of books">
+          {{book.name}} 
+        </li>
+      </ul>
+    </div>
+ </ng-template>
+ -->
+
+ <!-- Custom Directive -->
+ <!-- <input type="text" appForEmail> -->
+ 
+
+
+ <!--  Forms -->
+<!--  <div class="container">
+   <div class="row">
+     <div class="col-10">
+       <div class="m-2">
+          <form #form="ngForm" (ngSubmit)="submitForm(form)">
+            <div class="bg-danger text-white" *ngIf= " formSubmit && form.invalid">
+              There is a problem.Please check your information
+              <ul>
+                <li *ngFor="let error of getFormValidationErrors(form)">
+                  {{error}}
+                </li>
+              </ul>
+            </div>
+
+          <div class="bg-primary text-white m-2 p-2">
+            {{jsonBook}}
+          </div> 
+          <div class="form-group">
+            <label > Name </label>
+            <input required minlength="3"  [(ngModel)]="newBook.name" 
+             name="name" #name="ngModel" 
+             (change)="log(name)" type="text" class="form-control"> -->
+             <!-- <div class="alert alert-danger" *ngIf="!name.valid && name.touched"> -->
+             <!-- <div class="alert alert-danger" *ngIf="(formSubmit || name.dirty) && name.invalid ">
+              <p *ngFor="let error of getValidationErrors(name)">
+                {{error}}
+              </p> 
+             </div> -->
+             
+             <!-- <p *ngIf="name.errors.required">Name is required.Please fill in</p> 
+             <p *ngIf="name.errors.minlength">You must enter min. 3 characters.</p> -->
+             <!-- </div>
+           
+          <div class="form-group">
+           <label > Writer </label>
+           <input required maxlength="10" [(ngModel)]="newBook.writer" name="writer" #writer="ngModel" type="text" class="form-control">
+           <div class="alert alert-danger" *ngIf="!writer.valid && writer.touched">
+             <p *ngIf="writer.errors.required">Writer is required.Please fill in</p> 
+             <P *ngIf="writer.errors.maxlength">You must enter max. 10 characters.</P>
+            </div>
+         </div>
+         <div class="form-group">
+           <label > Price </label>
+           <input required pattern="[0-9]" [(ngModel)]="newBook.price" name="price" #price="ngModel" type="text" class="form-control">
+           <div class="alert alert-danger" *ngIf="!price.valid && price.touched">
+             <p *ngIf="price.errors.required">Price is required.Please fill in</p> 
+             <p *ngIf="price.errors.pattern">You must only number</p> 
+            </div>
+         </div>
+
+         <button type="submit"
+          class="btn btn-primary"
+          [disabled]="formSubmit && form.invalid"
+          [class.btn-secondary]="formSubmit && form.invalid"
+          >
+           Submit</button>
+       </form>
+      </div>   
+     </div>
+   </div>
+ </div> -->
+
+
+<!-- Reactive Form -->
+<!-- <div class="m-4">
+ <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label >Name</label>
+    <input class="form-control" formControlName="name"> -->
+    <!-- <input class="form-control" [formControl]="name"> -->
+    <!-- <div class="alert alert-danger"
+    *ngIf="name.touched && name.invalid">
+    <ul>
+      <li *ngIf="name.errors.required">
+        Name is required.
+      </li>
+      <li *ngIf="name.errors.minlength">
+        Min. 3 characters
+      </li>
+    </ul></div>
+  </div>
+  <div class="form-group">
+    <label >Writer</label>
+    <input class="form-control" formControlName="writer"> -->
+    <!-- <input class="form-control"[formControl]="writer"> -->
+  <!-- </div>
+  <div class="form-group">
+    <label >Price</label>
+    <input class="form-control" formControlName="price"> -->
+    <!-- <input class="form-control"[formControl]="price"> -->
+  <!-- </div>
+  <div class="form-group">
+    <label >Image</label>
+    <input class="form-control" formControlName="image">
+    <div class="alert alert-danger"
+    *ngIf="image.touched && image.invalid">
+    <ul>
+      <li *ngIf="image.errors.required">
+       Image is required.
+      </li>
+      <li *ngIf="image.errors.wrongExtension">
+        Wrong Extension
+      </li>
+    </ul></div>
+    
+  </div>
+  <button type="submit" (click)="updateBook()" class="btn btn-primary">Submit</button> -->
+  <!-- <button type="submit" (click)="updateName()" class="btn btn-primary">Submit</button> -->
+<!-- </form>
+</div>
+  -->
+
+<!-- Http Module -->
+<post>
+  
+</post>
+
+    
+  
+   

@@ -1,0 +1,21 @@
+<h2>Products</h2>
+<label >Product Name:</label>
+ <!-- <input type="text" class="form-control"
+(input)="onUpdateProductName($event)"> -->
+
+<input type="text" class="form-control"
+[(ngModel)]="enteredValue">
+
+
+
+
+<!-- <p>{{enteredValue}}</p> -->
+<br><br>
+<button class="btn btn-secondary " [disabled]="!addProduct"
+(click)="onClick()">Add Product</button>
+<!-- <p [innerText]="addProduct"></p> -->
+<p>{{addProductStatu}}</p>
+
+<br><br>
+ <product></product>
+ <product></product>

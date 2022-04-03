@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-md-12">
+        <ul class="list-group">
+            <li *ngFor="let product of products" class="list-group-item">
+                {{product.name}}
+                 <a class="btn btn-primary btn-sm" [routerLink]="['/products',product.id]">Detail</a>
+                 <a class=" btn btn-primary ml-2 btn-sm" [routerLink]="['/products',product.id,'edit']">Edit</a> 
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <p class="mt-2">
+            <a class="btn btn-secondary" routerLink="/products"
+            [queryParams]="{page:1, order:'newest'}">Newest Products</a>
+            <a class="btn btn-secondary ml-3" 
+            routerLink="/products"
+            [queryParams]="{page:1, order:'bestseller'}">Best Seller Products</a>
+            <a class="btn btn-secondary ml-3" routerLink="/products"
+            [queryParams]="{page:1, order:'favorite'}">Fovorite Products</a>
+            <button (click)="showProducts()" class="btn btn-secondary mt-2">Show Products</button>
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+
+
+
+

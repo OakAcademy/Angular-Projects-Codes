@@ -1,0 +1,24 @@
+var x;
+x = 'Hello';
+var y;
+var isCorrect;
+isCorrect = true;
+isCorrect = false;
+var countries = ['Russia', 'Germany', 'Portugal ',];
+var numbers = [1, 2, 3,];
+var t = [1, 'Hi'];
+var a;
+a = 5;
+a = 'Hi';
+a = true;
+var Colors;
+(function (Colors) {
+    Colors[Colors["red"] = 5] = "red";
+    Colors[Colors["black"] = 6] = "black";
+    Colors[Colors["blue"] = 3] = "blue";
+    Colors[Colors["yellow"] = 4] = "yellow";
+})(Colors || (Colors = {}));
+;
+var red = Colors.red;
+var blue = Colors.blue;
+var yellow = Colors.yellow;
